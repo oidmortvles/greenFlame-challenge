@@ -1,0 +1,11 @@
+.cardCar{
+    width: 100%;
+    background-color: var(--blanco);
+    width: 100%;
+    background-color: var(--blanco);
+    border-radius: var(--border);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
