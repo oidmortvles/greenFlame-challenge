@@ -1,0 +1,95 @@
+.header{
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0rem;
+}
+
+.topList{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+
+.topList a{
+    font-weight: 600;
+    color: var(--blueText);
+    font-size: small;
+    transition: .3s ease-out;
+}
+
+.topList a:hover{
+    color: var(--blueLight);
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.languageBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    border: none;
+    background: var(--grey);
+    padding: 12px;
+    width: 153px;
+    height: 40px;
+    border-radius: 6px;
+    transition: .3s ease-out;
+
+}
+
+.profileBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    border: none;
+    background: var(--grey);
+    padding: 12px;
+    width: fit-content;
+    height: 40px;
+    border-radius: 6px;
+    transition: .3s ease-out;
+}
+
+.languageBtn:hover,.profileBtn:hover{
+    background-color: var(--grey2);
+}
+
+
+.languageBtn span, .profileBtn span{
+    color: var(--blueText);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.btnTop span svg{
+    fill: var(--grey4);
+}
+
+
+.avatar{
+    background-color: var(--blueLight);
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blanco);
+    transform: scale(.8);
+}

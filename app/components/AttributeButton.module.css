@@ -1,0 +1,17 @@
+.attributeButton{
+    width: fit-content;
+    background-color: var(--grey);
+    border-radius: .5rem;
+    min-width: 38px;
+    min-height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.data{
+    font-weight: 600;
+    color: var(--blueDark);
+    text-transform: uppercase;
+}

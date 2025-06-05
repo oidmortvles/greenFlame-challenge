@@ -1,0 +1,27 @@
+.filterAside {    
+    box-sizing: border-box;
+    border-radius: 1rem;
+    width: 25%;
+    height: 100%;    
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header{
+  background-color: var(--blanco);
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.header p{
+    font-weight: 600;
+    color: var(--blueLight);
+    font-size: larger;
+}

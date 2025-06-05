@@ -1,11 +1,55 @@
 .cardCar{
-    width: 100%;
+    width: 968px;
+    height: 269px;
     background-color: var(--blanco);
     width: 100%;
     background-color: var(--blanco);
     border-radius: var(--border);
-    padding: 1rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    overflow: hidden;
+}
+
+.cardCarHeader{
+    height: 100%;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px dotted var(--grey2);
+    padding: 0 2rem;
+    border-left: 10px solid var(--blueLight);
+}
+
+.cardCarContent{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+.group{
+    font-size: small;
+    font-weight: 600;
+    color: var(--grey3);
+    text-spacing-trim: normal;
+    letter-spacing: 1px;
+}
+
+
+.class{
+    font-weight: 600;
+    color: var(--blueLight);
+    font-size: 1.3rem;
+}
+
+
+.attributes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;    
+    gap:1rem;
+    padding: 2rem 0rem;
+    border-bottom: thin solid var(--grey2);
 }
