@@ -1,6 +1,6 @@
 .selector{
     width: 100%;
-    max-height: 5rem;
+    max-height: 3rem;
     overflow: hidden;
     border: none;
     display: flex;
@@ -19,8 +19,7 @@
 .header{
     width: 100%;
     background-color: var(--blanco);
-    padding: 1rem;
-    padding-left: 2rem;
+    padding: 13px 20px 13px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -68,7 +67,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 1rem;
     padding: 1.5rem 1.5rem 1.5rem 2rem;
     background-color: var(--blanco);
 }

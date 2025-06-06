@@ -1,0 +1,18 @@
+.customCheckbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: small;
+}
+
+
+.input{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 8px;
+    accent-color: var(--blueLight);
+    overflow: hidden;
+    border: none;
+    transition: background-color 0.3s ease-out;
+}

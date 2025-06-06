@@ -55,6 +55,10 @@
 .sendPrice, .topPrice{
     background-color: var(--blueLight);
     width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     color: var(--blanco);
     border: none;
     border-radius: .5rem;
@@ -66,15 +70,14 @@
 .topPrice{
   background-color: var(--blanco);
   color: var(--blueText);
+
 }
 
 
 
 .listCarAside{
   width: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  overflow-y: auto;
 }

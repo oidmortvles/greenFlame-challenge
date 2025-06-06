@@ -9,6 +9,8 @@
     align-items: center;
     gap: 1.5rem;
     overflow: hidden;
+    box-shadow: 1px 4px 15px 0px #0000001a;
+    position: relative;
 }
 
 .cardCarHeader{

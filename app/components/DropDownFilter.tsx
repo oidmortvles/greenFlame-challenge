@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import styles from './DropDownFilter.module.css';
+import CustomCheckBox from './CustomCheckBox';
 
 interface DropdownProps {
   title: string;
@@ -30,7 +31,7 @@ const DropdownFilter: React.FC<DropdownProps> = ({ title, items }) => {
                 <ul className={styles.list}>
                     {
                         items.map((item, index) => (
-                            <p key={index}>{item}</p>
+                            <CustomCheckBox label={item} key={index} onCheck={() => console.log('Tildado')} onUncheck={() => console.log('Destildado')}  />
                         ))  
                     }
                 </ul>

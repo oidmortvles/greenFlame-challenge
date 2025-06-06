@@ -1,6 +1,7 @@
 import FilterAside from './FiltersAside';
 import ListCars from './ListCars';
 import styles from './MainContent.module.css';
+import CARS from '../store/carsJSON.json';
 
 const MainContent : React.FC = () => {
   return (

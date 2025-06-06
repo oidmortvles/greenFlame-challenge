@@ -1,0 +1,55 @@
+.itemTooltip{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+.itemTooltip header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+
+.text{
+    font-weight: 400;
+    font-size: small;
+}
+
+
+/* TOOLTIP */
+
+.tooltip{
+    width: 350px;
+    position: absolute;
+    left: 550px;
+    top: 0px;
+    z-index: 10;
+    background-color: var(--blanco);
+    border-radius: 18px;
+    padding: 1rem;
+    box-shadow: 0 0 8px #0000001a;    
+}
+
+
+.tooltip h3{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--grey);
+    font-weight: 600;
+    font-size: medium;
+}
+
+
+.tooltipContent{
+    padding-top: 1rem;
+}
+
+.tittle{
+    font-weight: 500;
+}
+
+.list{
+    padding-left:1rem;
+    padding-top: .5rem;
+}
