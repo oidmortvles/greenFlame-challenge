@@ -2,8 +2,12 @@
 import CardCar from './CardCar';
 import stlyes from './ListCars.module.css';
 
+import { Car } from '../store/CarsInterface';
+type ListCarsProps = {
+    cars: Car[];
+}
 
-const ListCars : React.FC = () =>{
+const ListCars : React.FC <ListCarsProps> = ({cars}) =>{
     return(
         <section className={stlyes.listCars}>
             <header className={stlyes.listHeader}>
@@ -28,18 +32,9 @@ const ListCars : React.FC = () =>{
             </header>
 
             <aside className={stlyes.listCarAside}>
-                <CardCar/>
-                <CardCar/>
-                <CardCar/>
-
-                <CardCar/>
-                <CardCar/>
-                <CardCar/>
-
-                <CardCar/>
-                <CardCar/>
-                <CardCar/>
-                
+                {cars.map((car, index) => (
+                    <CardCar key={index} car={car} />
+                ))}                 
             </aside>
         </section>
     )

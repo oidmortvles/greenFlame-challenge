@@ -1,18 +1,18 @@
 import { create } from 'zustand';
 
 interface PriceStore {
-  categories: string[];
+  prices: string[];
   selected: string[];
-  setCategories: (items: string[]) => void;
+  setPrices: (items: string[]) => void;
   selectItem: (item: string) => void;
   deleteItem: (item: string) => void;
 }
 
 export const useFilterPrice = create<PriceStore>((set, get) => ({
-  categories: [],
+  prices: [],
   selected: [],
 
-  setCategories: (items) => set({ categories: items }),
+  setPrices: (items) => set({ prices: items }),
 
   selectItem: (item) => {
     const { selected } = get();

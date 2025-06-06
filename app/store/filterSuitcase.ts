@@ -1,18 +1,18 @@
 import { create } from 'zustand';
 
 interface SuitcaseStore {
-  categories: number[];
+  suitcases: number[];
   selected: number[];
-  setCategories: (items: number[]) => void;
+  setSuitcases: (items: number[]) => void;
   selectItem: (item: number) => void;
   deleteItem: (item: number) => void;
 }
 
 export const useFilterSuitcase = create<SuitcaseStore>((set, get) => ({
-  categories: [],
+  suitcases: [],
   selected: [],
 
-  setCategories: (items) => set({ categories: items }),
+  setSuitcases: (items) => set({ suitcases: items }),
 
   selectItem: (item) => {
     const { selected } = get();

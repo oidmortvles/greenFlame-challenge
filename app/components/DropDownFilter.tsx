@@ -5,10 +5,12 @@ import CustomCheckBox from './CustomCheckBox';
 
 interface DropdownProps {
   title: string;
-  items: string[];
+  items: string[] | number[];
+  maletas?:boolean;
+  pasajeros?:boolean
 }
 
-const DropdownFilter: React.FC<DropdownProps> = ({ title, items }) => {
+const DropdownFilter: React.FC<DropdownProps> = ({ title, items, maletas, pasajeros }) => {
     
         const [active,setActive] = useState (false);
         
@@ -31,7 +33,7 @@ const DropdownFilter: React.FC<DropdownProps> = ({ title, items }) => {
                 <ul className={styles.list}>
                     {
                         items.map((item, index) => (
-                            <CustomCheckBox label={item} key={index} onCheck={() => console.log('Tildado')} onUncheck={() => console.log('Destildado')}  />
+                            <CustomCheckBox label={item} key={index} onCheck={() => console.log('Tildado')} onUncheck={() => console.log('Destildado')}  maletas={maletas} pasajeros={pasajeros} />
                         ))  
                     }
                 </ul>

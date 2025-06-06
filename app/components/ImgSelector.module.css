@@ -1,8 +1,21 @@
-
-
-
 .starRating{
     display: flex;
     align-items: center;
     gap: .5rem;
+}
+
+.imgContainer {
+  background-color: var(--blanco);
+  width: 201px;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }

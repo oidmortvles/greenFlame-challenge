@@ -1,18 +1,18 @@
 import { create } from 'zustand';
 
 interface CompanyStore {
-  categories: string[];
+  companys: string[];
   selected: string[];
-  setCategories: (items: string[]) => void;
+  setCompanies: (items: string[]) => void;
   selectItem: (item: string) => void;
   deleteItem: (item: string) => void;
 }
 
 export const useFilterCompany = create<CompanyStore>((set, get) => ({
-  categories: [],
+  companys: [],
   selected: [],
 
-  setCategories: (items) => set({ categories: items }),
+  setCompanies: (items) => set({ companys: items }),
 
   selectItem: (item) => {
     const { selected } = get();

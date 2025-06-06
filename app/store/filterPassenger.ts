@@ -1,18 +1,18 @@
 import { create } from 'zustand';
 
 interface PassengerStore {
-  categories: number[];
+  passengers: number[];
   selected: number[];
-  setCategories: (items: number[]) => void;
+  setPassenger: (items: number[]) => void;
   selectItem: (item: number) => void;
   deleteItem: (item: number) => void;
 }
 
 export const useFilterPassenger = create<PassengerStore>((set, get) => ({
-  categories: [],
+  passengers: [],
   selected: [],
 
-  setCategories: (items) => set({ categories: items }),
+  setPassenger: (items) => set({ passengers: items }),
 
   selectItem: (item) => {
     const { selected } = get();

@@ -1,10 +1,38 @@
 "use client"
-import DropdownFilter from './DropDownFilter';
 import styles from './FilterAside.module.css';
 
-const FilterAside : React.FC = () =>{
+import { useFilterCategory } from '../store/filterCategory';
+import { useFilterCompany } from '../store/filterCompany';
+import { useFilterPassenger } from '../store/filterPassenger';
+import { useFilterPrice } from '../store/filterPrice';
+import { useFilterSuitcase } from '../store/filterSuitcase';
+import DropdownFilter from './DropDownFilter';
+import { useEffect } from 'react';
 
-    const items = ['Opción A', 'Opción B', 'Opción C'];
+type FilterAsideProps ={
+    uniqueCategories:string[],
+    allCompanies:string[],
+    uniquePassengers:number[],
+    allPrices:string[],
+    uniqueSuitcaseValues:number[],
+}
+
+
+const FilterAside : React.FC <FilterAsideProps> = ({uniqueCategories, allCompanies, uniquePassengers, allPrices, uniqueSuitcaseValues }) =>{
+
+    const {setCategories,categories} = useFilterCategory();
+    const {setCompanies, companys} = useFilterCompany();
+    const {setPassenger, passengers} = useFilterPassenger();
+    const {setPrices, prices} = useFilterPrice();
+    const {setSuitcases, suitcases} = useFilterSuitcase();
+
+    useEffect(() => {
+        setCategories(uniqueCategories);
+        setCompanies(allCompanies);
+        setPassenger(uniquePassengers);
+        setPrices(allPrices);
+        setSuitcases(uniqueSuitcaseValues);
+    }, []);
 
     return(
         <aside className={styles.filterAside}>
@@ -12,11 +40,11 @@ const FilterAside : React.FC = () =>{
                 <img src={"./icons/filter-icon.svg"}/>
                 <p>Filtrar Resultados</p>
             </header>
-            <DropdownFilter title="Compañía rentadora" items={items}/>
-            <DropdownFilter title="Categoría del auto" items={items}/>
-            <DropdownFilter title="Capacidad de maletas" items={items}/>
-            <DropdownFilter title="Cantidad de pasajeros" items={items}/>
-            <DropdownFilter title="Fijar un rango de precios (COP)" items={items}/>
+            <DropdownFilter title="Compañía rentadora" items={companys} maletas={false} pasajeros={false} />
+            <DropdownFilter title="Categoría del auto" items={categories} maletas={false} pasajeros={false} />
+            <DropdownFilter title="Capacidad de maletas" items={suitcases} maletas={true} pasajeros={false}/>
+            <DropdownFilter title="Cantidad de pasajeros" items={passengers} maletas={false} pasajeros={true}/>
+            
         </aside>
     )
 }
