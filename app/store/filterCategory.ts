@@ -4,8 +4,8 @@ interface CategoryStore {
   categories: string[];
   selected: string[];
   setCategories: (items: string[]) => void;
-  selectItem: (item: string) => void;
-  deleteItem: (item: string) => void;
+  selectCategory: (item: string) => void;
+  deleteCategory: (item: string) => void;
 }
 
 export const useFilterCategory = create<CategoryStore>((set, get) => ({
@@ -14,14 +14,14 @@ export const useFilterCategory = create<CategoryStore>((set, get) => ({
 
   setCategories: (items) => set({ categories: items }),
 
-  selectItem: (item) => {
+  selectCategory: (item) => {
     const { selected } = get();
     if (!selected.includes(item)) {
       set({ selected: [...selected, item] });
     }
   },
 
-  deleteItem: (item) => {
+  deleteCategory: (item) => {
     const { selected } = get();
     set({ selected: selected.filter((i) => i !== item) });
   },

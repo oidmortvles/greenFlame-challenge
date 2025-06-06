@@ -1,0 +1,42 @@
+.cotizarButton{
+    margin-top: 2rem;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    font-weight: 600;
+    color: var(--blueLight);
+    transition: .3s ease-out;
+}
+
+
+.cotizarButton:hover{
+    color: var(--blueDark);
+}
+
+
+.cotizarButton:disabled{
+    opacity: .5;
+}
+
+
+.cotizarButtonAdd{
+        margin-top: 2rem;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    font-weight: 600;
+    color: #26B489;
+    transition: .3s ease-out;
+
+}
+
+
+.cotizarButtonAdd:hover{
+
+}

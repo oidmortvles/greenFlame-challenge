@@ -1,13 +1,12 @@
 .cardCar{
     width: 968px;
     height: 269px;
-    background-color: var(--blanco);
     width: 100%;
     background-color: var(--blanco);
     border-radius: var(--border);
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     overflow: hidden;
     box-shadow: 1px 4px 15px 0px #0000001a;
     position: relative;
@@ -27,7 +26,6 @@
 .cardCarContent{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
 }
 
 
@@ -52,6 +50,8 @@
     align-items: center;
     justify-content: space-around;    
     gap:1rem;
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
     border-bottom: thin solid var(--grey2);
 }
+
+

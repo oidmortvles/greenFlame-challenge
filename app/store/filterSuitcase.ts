@@ -4,8 +4,8 @@ interface SuitcaseStore {
   suitcases: number[];
   selected: number[];
   setSuitcases: (items: number[]) => void;
-  selectItem: (item: number) => void;
-  deleteItem: (item: number) => void;
+  selectSuitcase: (item: number) => void;
+  deleteSuitcase: (item: number) => void;
 }
 
 export const useFilterSuitcase = create<SuitcaseStore>((set, get) => ({
@@ -14,14 +14,14 @@ export const useFilterSuitcase = create<SuitcaseStore>((set, get) => ({
 
   setSuitcases: (items) => set({ suitcases: items }),
 
-  selectItem: (item) => {
+  selectSuitcase: (item) => {
     const { selected } = get();
     if (!selected.includes(item)) {
       set({ selected: [...selected, item] });
     }
   },
 
-  deleteItem: (item) => {
+  deleteSuitcase: (item) => {
     const { selected } = get();
     set({ selected: selected.filter((i) => i !== item) });
   },

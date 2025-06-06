@@ -41,7 +41,7 @@ const MainContent : React.FC = () => {
     <section className={styles.mainContent}>
         <div className={styles.body}>
             <FilterAside allCompanies={allCompanies} allPrices={allPrices} uniqueCategories={uniqueCategories} uniquePassengers={uniquePassengers} uniqueSuitcaseValues={uniqueSuitcaseValues} />
-            <ListCars cars={allCars}/>
+            <ListCars/>
         </div>
     </section>
   );

@@ -4,9 +4,10 @@ type ImgSelectorProps = {
    brand: number; 
    img:string;
    stars: number;
+   featured: boolean; 
 }
 
-const ImgSelector: React.FC <ImgSelectorProps> = ({brand, img, stars}) => {
+const ImgSelector: React.FC <ImgSelectorProps> = ({brand, img, stars, featured}) => {
 
     const image = () =>{
         switch(brand){
@@ -46,11 +47,15 @@ const ImgSelector: React.FC <ImgSelectorProps> = ({brand, img, stars}) => {
                     <img src={`/cars/${carPicture}`} width={"201px"} height={"auto"}/>
                 </div>
                 
+                <div className={styles.btnFeatured}>
+                    {featured &&
+                        <button className={styles.featuredButton}>
+                            <img src={"/icons/featured-icon.svg"} />
+                            Destacado
+                        </button>
+                    }
+                </div>
                 
-                <button>
-                    <img src={"/icons/featured-icon.svg"} />
-                    Destacado
-                </button>
         </section>
     )
 }

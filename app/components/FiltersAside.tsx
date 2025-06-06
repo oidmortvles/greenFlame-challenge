@@ -1,11 +1,12 @@
 "use client"
 import styles from './FilterAside.module.css';
 
-import { useFilterCategory } from '../store/filterCategory';
 import { useFilterCompany } from '../store/filterCompany';
+import { useFilterCategory } from '../store/filterCategory';
+import { useFilterSuitcase } from '../store/filterSuitcase';
 import { useFilterPassenger } from '../store/filterPassenger';
 import { useFilterPrice } from '../store/filterPrice';
-import { useFilterSuitcase } from '../store/filterSuitcase';
+
 import DropdownFilter from './DropDownFilter';
 import { useEffect } from 'react';
 
@@ -20,18 +21,18 @@ type FilterAsideProps ={
 
 const FilterAside : React.FC <FilterAsideProps> = ({uniqueCategories, allCompanies, uniquePassengers, allPrices, uniqueSuitcaseValues }) =>{
 
-    const {setCategories,categories} = useFilterCategory();
-    const {setCompanies, companys} = useFilterCompany();
-    const {setPassenger, passengers} = useFilterPassenger();
+    const {setCompanies, companys, selectCompany, deleteCompany} = useFilterCompany();
+    const {setCategories,categories, selectCategory, deleteCategory} = useFilterCategory();
+    const {setSuitcases, suitcases, selectSuitcase, deleteSuitcase} = useFilterSuitcase();
+    const {setPassenger, passengers, selectPassenger, deletePassenger} = useFilterPassenger();
     const {setPrices, prices} = useFilterPrice();
-    const {setSuitcases, suitcases} = useFilterSuitcase();
 
     useEffect(() => {
-        setCategories(uniqueCategories);
         setCompanies(allCompanies);
+        setCategories(uniqueCategories);
+        setSuitcases(uniqueSuitcaseValues);
         setPassenger(uniquePassengers);
         setPrices(allPrices);
-        setSuitcases(uniqueSuitcaseValues);
     }, []);
 
     return(
@@ -40,10 +41,10 @@ const FilterAside : React.FC <FilterAsideProps> = ({uniqueCategories, allCompani
                 <img src={"./icons/filter-icon.svg"}/>
                 <p>Filtrar Resultados</p>
             </header>
-            <DropdownFilter title="Compañía rentadora" items={companys} maletas={false} pasajeros={false} />
-            <DropdownFilter title="Categoría del auto" items={categories} maletas={false} pasajeros={false} />
-            <DropdownFilter title="Capacidad de maletas" items={suitcases} maletas={true} pasajeros={false}/>
-            <DropdownFilter title="Cantidad de pasajeros" items={passengers} maletas={false} pasajeros={true}/>
+            <DropdownFilter title="Compañía rentadora" items={companys} maletas={false} pasajeros={false} add={(item) => selectCompany(item as string)} remove={(item) => deleteCompany(item as string)} />
+            <DropdownFilter title="Categoría del auto" items={categories} maletas={false} pasajeros={false} add={(item) =>selectCategory(item as string)} remove={(item) => deleteCategory(item as string)}/>
+            <DropdownFilter title="Capacidad de maletas" items={suitcases} maletas={true} pasajeros={false} add={(item) => selectSuitcase(item as number)} remove={(item) => deleteSuitcase(item as number)}/>
+            <DropdownFilter title="Cantidad de pasajeros" items={passengers} maletas={false} pasajeros={true} add={(item) => selectPassenger(item as number)} remove={(item) => deletePassenger(item as number)}/>
             
         </aside>
     )

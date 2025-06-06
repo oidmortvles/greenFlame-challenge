@@ -1,17 +1,18 @@
 "use client";
 import CardCar from './CardCar';
 import stlyes from './ListCars.module.css';
+import { useFilterResult } from '../store/filterResult';
 
-import { Car } from '../store/CarsInterface';
-type ListCarsProps = {
-    cars: Car[];
-}
 
-const ListCars : React.FC <ListCarsProps> = ({cars}) =>{
+
+const ListCars : React.FC = () =>{
+
+    const filteredCars = useFilterResult();
+
     return(
         <section className={stlyes.listCars}>
             <header className={stlyes.listHeader}>
-                <p className={stlyes.result}>Encontramos 169 vehículos para tu búsqueda.</p>
+                <p className={stlyes.result}>Encontramos {filteredCars.length} {filteredCars.length <= 1 ? "vehículo" : "vehículos"} para tu búsqueda.</p>
                 
                 <div className={stlyes.check}>
                      <input type="checkbox" value="" id="checkDefault"  defaultChecked className={stlyes.checkBox}/>
@@ -32,7 +33,7 @@ const ListCars : React.FC <ListCarsProps> = ({cars}) =>{
             </header>
 
             <aside className={stlyes.listCarAside}>
-                {cars.map((car, index) => (
+                {filteredCars.map((car, index) => (
                     <CardCar key={index} car={car} />
                 ))}                 
             </aside>

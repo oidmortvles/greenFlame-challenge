@@ -4,8 +4,8 @@ interface PassengerStore {
   passengers: number[];
   selected: number[];
   setPassenger: (items: number[]) => void;
-  selectItem: (item: number) => void;
-  deleteItem: (item: number) => void;
+  selectPassenger: (item: number) => void;
+  deletePassenger: (item: number) => void;
 }
 
 export const useFilterPassenger = create<PassengerStore>((set, get) => ({
@@ -14,14 +14,14 @@ export const useFilterPassenger = create<PassengerStore>((set, get) => ({
 
   setPassenger: (items) => set({ passengers: items }),
 
-  selectItem: (item) => {
+  selectPassenger: (item) => {
     const { selected } = get();
     if (!selected.includes(item)) {
       set({ selected: [...selected, item] });
     }
   },
 
-  deleteItem: (item) => {
+  deletePassenger: (item) => {
     const { selected } = get();
     set({ selected: selected.filter((i) => i !== item) });
   },

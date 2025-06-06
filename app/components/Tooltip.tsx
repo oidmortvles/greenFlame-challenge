@@ -2,7 +2,12 @@
 import styles from './Tooltip.module.css';
 
 
-const itemTooltip = ({text}:{text:string}) =>{
+import { Car } from '../store/CarsInterface';
+type ItemTooltipProps = {
+    text:string;
+}
+
+const ItemTooltip : React.FC <ItemTooltipProps> = ({text}) =>{
     return(
         <li className={styles.itemTooltip}>
             <header>
@@ -17,23 +22,38 @@ const itemTooltip = ({text}:{text:string}) =>{
 }
 
 
+const getData = (car: Car) => {
+  const entries = Object.entries(car.rates);
+  if (entries.length === 0) return [];
+
+  const [_, rate] = entries[0];
+  const meta = rate.inclusions_meta;
+
+  return Object.entries(meta).map(([key, val]) => ({
+    key,...val,
+  }));
+};
+
+
 type TooltipProps = {
     tittle:string;
+    car: Car;
 }
 
-const Tooltip : React.FC <TooltipProps> = ({tittle}) =>{
+const Tooltip : React.FC <TooltipProps> = ({tittle, car}) =>{
+
+    const data = getData(car).slice(0, 6);
+
+
     return(
         <div className={styles.tooltip}>
             <h3>Detalle de la tarifa</h3>
             <div className={styles.tooltipContent}>
                 <p className={styles.tittle}>{tittle}</p>
                 <ul className={styles.list}>
-                    {itemTooltip({text:"kilometraje ilimitado"})}
-                    {itemTooltip({text:"kilometraje ilimitado"})}
-                    {itemTooltip({text:"kilometraje ilimitado"})}
-                    {itemTooltip({text:"kilometraje ilimitado"})}
-                    {itemTooltip({text:"Incluye seguro de robo total"})}
-                    {itemTooltip({text:"Incluye seguro de robo total"})}
+                    {data.map((item) => (
+                        <ItemTooltip key={item.key} text={item.name} />
+                    ))}
                 </ul>
             </div>
         </div>

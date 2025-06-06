@@ -7,10 +7,12 @@ interface DropdownProps {
   title: string;
   items: string[] | number[];
   maletas?:boolean;
-  pasajeros?:boolean
+  pasajeros?:boolean;
+    add: (item: string | number) => void;
+    remove: (item: string | number) => void;
 }
 
-const DropdownFilter: React.FC<DropdownProps> = ({ title, items, maletas, pasajeros }) => {
+const DropdownFilter: React.FC<DropdownProps> = ({ title, items, maletas, pasajeros, add, remove }) => {
     
         const [active,setActive] = useState (false);
         
@@ -33,7 +35,7 @@ const DropdownFilter: React.FC<DropdownProps> = ({ title, items, maletas, pasaje
                 <ul className={styles.list}>
                     {
                         items.map((item, index) => (
-                            <CustomCheckBox label={item} key={index} onCheck={() => console.log('Tildado')} onUncheck={() => console.log('Destildado')}  maletas={maletas} pasajeros={pasajeros} />
+                            <CustomCheckBox label={item} key={index} onCheck={() => add(item)} onUncheck={() => remove(item)}  maletas={maletas} pasajeros={pasajeros} />
                         ))  
                     }
                 </ul>

@@ -3,8 +3,12 @@ import { useState } from 'react';
 import styles from './PannelDetails.module.css';
 import Tooltip from './Tooltip';
 
+import { Car } from '../store/CarsInterface';
+type PannelDetailsProps = {
+    car: Car;
+}
 
-const PannelDetails: React.FC = () => {
+const PannelDetails: React.FC <PannelDetailsProps> = ({car}) => {
 
     const [tooltip, setTooltip] = useState(false);
 
@@ -14,7 +18,7 @@ const PannelDetails: React.FC = () => {
 
     return(
         <>
-        {tooltip && <Tooltip tittle={"Inclusive Light"}/>}
+        {tooltip && <Tooltip tittle={"Inclusive Light"} car={car}/>}
         <section className={styles.pannelDetails}>
             <header className={styles.headerPannel}>
                 <div className={styles.details}>
