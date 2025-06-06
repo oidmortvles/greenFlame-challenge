@@ -25,7 +25,7 @@ const FilterAside : React.FC <FilterAsideProps> = ({uniqueCategories, allCompani
     const {setCategories,categories, selectCategory, deleteCategory} = useFilterCategory();
     const {setSuitcases, suitcases, selectSuitcase, deleteSuitcase} = useFilterSuitcase();
     const {setPassenger, passengers, selectPassenger, deletePassenger} = useFilterPassenger();
-    const {setPrices, prices} = useFilterPrice();
+    const {setPrices} = useFilterPrice();
 
     useEffect(() => {
         setCompanies(allCompanies);

@@ -17,9 +17,9 @@ const CustomCheckBox : React.FC <CustomCheckBoxProps> = ({ label, onCheck, onUnc
         const newChecked = !checked;
         setChecked(newChecked);
         if (newChecked) {
-        onCheck && onCheck();
+            if (onCheck) onCheck();
         } else {
-        onUncheck && onUncheck();
+            if (onUncheck) onUncheck();
         }
     };
 
